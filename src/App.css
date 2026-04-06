@@ -1,0 +1,65 @@
+.main-container {
+    background-color: black;
+    display: flex;
+    gap: 20px;
+    padding: 5px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    align-items: stretch;
+}
+
+
+
+.summary-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 60px;
+    background-color: rgb(21, 21, 23);
+    padding-left: 15px;
+    height: max-content;
+    padding-bottom: 70px;
+    border-radius: 40px;
+}
+
+.visual-container {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+    padding-right: 50px;
+
+}
+
+
+@media (max-width: 768px) {
+    #main-container {
+        flex-direction: column;
+    }
+
+    .summary-container,
+    .visual-container {
+        width: 100%;
+    }
+}
+
+.top {
+    flex: 1;
+}
+
+.bottom {
+    flex: 1;
+}
+
+.tans-history {
+    padding-top: 40px;
+}
+
+.nav {
+    margin-top: 10px;
+    background-color: rgb(103, 103, 253);
+    color: aliceblue;
+}

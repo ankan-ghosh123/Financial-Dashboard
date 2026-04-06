@@ -1,0 +1,154 @@
+.main-admin {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    background-color: rgb(6, 6, 6);
+    overflow-x: hidden;
+
+
+}
+
+input.inpt {
+    background-color: rgb(42, 42, 80);
+    border: none;
+    height: 40px;
+}
+
+.add-tnx-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 25px;
+    gap: 5px;
+    flex-wrap: wrap;
+    background-color: rgb(25, 25, 27);
+    padding-bottom: 5px;
+}
+
+
+
+.add-btn {
+    width: 100px;
+    background-color: rgb(103, 103, 253);
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+
+
+.save-btn {
+    background-color: rgb(62, 189, 34);
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.edit-btn {
+    background-color: rgb(103, 103, 253);
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+
+}
+
+input.edit-inpt {
+    background-color: rgb(42, 42, 80);
+    border: none;
+    height: 40px;
+}
+
+input.inpt {
+    width: 100%;
+    max-width: 180px;
+
+
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(25, 25, 27);
+    padding-bottom: 10px;
+
+
+}
+
+
+.add-btn {
+    margin-top: 25px;
+    width: 100px;
+    background-color: rgb(103, 103, 253);
+    border-radius: 10px;
+    border: none;
+    align-self: center;
+}
+
+/* ===== Tablet (<= 1024px) ===== */
+@media (max-width: 1024px) {
+
+    .add-tnx-div {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    input.inpt {
+        max-width: 160px;
+    }
+
+}
+
+
+/* ===== Small Tablet / Large Phone (<= 768px) ===== */
+@media (max-width: 768px) {
+
+    .add-tnx-div {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    input.inpt {
+        max-width: 140px;
+    }
+
+}
+
+
+/* ===== Mobile (<= 480px) ===== */
+@media (max-width: 480px) {
+
+    .add-tnx-div {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    input.inpt {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .btn-container {
+        justify-content: center;
+    }
+
+    .add-btn {
+        width: 120px;
+    }
+
+}
+
+
+/* ===== Very Small Phones (<= 360px) ===== */
+@media (max-width: 360px) {
+
+    input.inpt {
+        width: 95%;
+    }
+
+}
