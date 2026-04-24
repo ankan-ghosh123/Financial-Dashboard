@@ -68,7 +68,7 @@ function App() {
                 logout({
                   logoutParams: {
                     returnTo:
-                      window.location.origin
+                      window.location.origin +"/Financial-Dashboard/"
                   }
                 })
               }
