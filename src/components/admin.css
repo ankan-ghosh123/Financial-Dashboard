@@ -1,17 +1,22 @@
 .main-admin {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 70px;
     background-color: rgb(6, 6, 6);
     overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
 
 
 }
 
 input.inpt {
-    background-color: rgb(42, 42, 80);
-    border: none;
-    height: 40px;
+    background-color: black;
+
+    height: 35px;
+    border: 2px solid rgb(42, 42, 80);
+    border-radius: 5px;
+    border: 1px solid rgb(103, 103, 253)
 }
 
 .add-tnx-div {
@@ -23,6 +28,7 @@ input.inpt {
     flex-wrap: wrap;
     background-color: rgb(25, 25, 27);
     padding-bottom: 5px;
+    background-color: black;
 }
 
 
@@ -30,15 +36,27 @@ input.inpt {
 .add-btn {
     width: 100px;
     background-color: rgb(103, 103, 253);
+    background-color: rgba(255, 255, 255, 0.1);
+
     border-radius: 10px;
-    border: none;
+
     padding: 5px;
+    border: 2px solid rgb(84, 84, 251);
 }
 
 
 
 .save-btn {
     background-color: rgb(62, 189, 34);
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.delt-btn {
+    background-color: rgb(153, 2, 2);
     border-radius: 10px;
     border: none;
     padding: 5px;
@@ -57,9 +75,11 @@ input.inpt {
 }
 
 input.edit-inpt {
-    background-color: rgb(42, 42, 80);
-    border: none;
-    height: 40px;
+
+    background-color: black;
+    color: rgb(138, 138, 228);
+    border: 1px solid rgb(42, 42, 80);
+    height: 30px;
 }
 
 input.inpt {
@@ -86,9 +106,64 @@ input.inpt {
     border-radius: 10px;
     border: none;
     align-self: center;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgb(84, 84, 251);
 }
 
-/* ===== Tablet (<= 1024px) ===== */
+.add-btn:hover {
+
+    border: 3px solid rgb(10, 10, 253);
+    border: 2px solid greenyellow;
+}
+
+.edit-btn:hover {
+    border: 2px solid greenyellow;
+}
+
+.save-btn:hover {
+    border: 2px solid greenyellow;
+}
+
+.delt-btn:hover {
+    border: 2px solid rgb(248, 151, 151);
+}
+
+input.inpt:hover {
+    border: 3px solid rgb(103, 103, 253);
+}
+
+table.admin-edit-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style the header row */
+table.admin-edit-table th {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 2px solid rgb(103, 103, 237);
+    /* Thicker line for header */
+    color: rgb(103, 103, 237);
+}
+
+/* Style every data cell */
+table.admin-edit-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgb(56, 56, 84);
+    /* Light line between rows */
+    color: rgb(138, 138, 228);
+}
+
+/* Optional: Add a hover effect to rows */
+table.admin-edit-table tr:hover {
+    background-color: rgb(49, 49, 49);
+}
+
+
+
+
+
 @media (max-width: 1024px) {
 
     .add-tnx-div {
@@ -103,7 +178,7 @@ input.inpt {
 }
 
 
-/* ===== Small Tablet / Large Phone (<= 768px) ===== */
+
 @media (max-width: 768px) {
 
     .add-tnx-div {
@@ -116,10 +191,11 @@ input.inpt {
         max-width: 140px;
     }
 
+
 }
 
 
-/* ===== Mobile (<= 480px) ===== */
+
 @media (max-width: 480px) {
 
     .add-tnx-div {
@@ -144,11 +220,154 @@ input.inpt {
 }
 
 
-/* ===== Very Small Phones (<= 360px) ===== */
+
 @media (max-width: 360px) {
 
     input.inpt {
         width: 95%;
+    }
+
+}
+
+/*chat gpt sugg*/
+
+.add-tnx-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    /*Repeat the column pattern multiple times,auto-fit
+    -creates multiple col autometically ,min col widh-160px 
+    max col width occupy remaining space*/
+    gap: 10px;
+    padding: 20px;
+    background-color: black;
+}
+
+input.inpt {
+    width: 100%;
+    height: 38px;
+    background-color: black;
+    color: rgb(138, 138, 228);
+    border: 1px solid rgb(103, 103, 253);
+    border-radius: 6px;
+    padding-left: 8px;
+}
+
+.add-btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.add-btn {
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(84, 84, 251);
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.admin-table {
+    width: 100%;
+    overflow-x: auto;
+    /*content is biger then the width of the scrren add 
+                          horizontal scrooling*/
+    padding: 0 10px;
+    /* top,bottom-0px nd left write-10px*/
+}
+
+.admin-edit-table {
+    width: 100%;
+    min-width: 700px;
+    /* prevents column collapse */
+    border-collapse: collapse;
+}
+
+.admin-edit-table th {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 2px solid rgb(103, 103, 237);
+    color: rgb(103, 103, 237);
+    white-space: nowrap;
+}
+
+.admin-edit-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgb(56, 56, 84);
+    color: rgb(138, 138, 228);
+    text-align: center;
+}
+
+.admin-edit-table tr:hover {
+    background-color: rgb(49, 49, 49);
+}
+
+.edit-inpt {
+    width: 100%;
+    min-width: 90px;
+    height: 32px;
+    background-color: black;
+    color: rgb(138, 138, 228);
+    border: 1px solid rgb(42, 42, 80);
+    border-radius: 5px;
+    padding-left: 6px;
+}
+
+.edit-btn,
+.save-btn,
+.delt-btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: rgb(103, 103, 253);
+}
+
+.save-btn {
+    background-color: rgb(62, 189, 34);
+}
+
+.delt-btn {
+    background-color: rgb(153, 2, 2);
+}
+
+@media (max-width: 1024px) {
+
+    .add-tnx-div {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .admin-edit-table {
+        min-width: 650px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .add-tnx-div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .add-btn {
+        width: 100%;
+        max-width: 220px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .add-tnx-div {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-edit-table {
+        font-size: 13px;
     }
 
 }

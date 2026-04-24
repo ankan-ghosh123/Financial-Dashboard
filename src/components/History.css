@@ -1,90 +1,176 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+
 .main-div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
     background-color: black;
-    flex-wrap: wrap;
-
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Heading */
+
+.hist-heading {
+    color: rgb(103, 103, 237);
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Filters */
 
 .featurs-div {
-    padding-top: 50px;
-    background-color: rgb(25, 25, 27);
-    margin-left: 75px;
-    margin-bottom: 1px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: row;
-    gap: 50px;
-    margin-right: 130px;
-    padding-bottom: 8px;
-    padding-top: 8px;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+
+    padding: 10px;
+
+    background-color: black;
+}
+
+/* Search */
+
+.search-field {
+    width: 100%;
+    max-width: 400px;
+
+    height: 32px;
+
+    background-color: black;
+    border: none;
+    border: 1px solid rgb(103, 103, 237);
+
     padding-left: 10px;
-    padding-right: 10px;
+    color: white;
 }
 
-input.search-field {
-    width: 100%;
-}
+/* Dropdown */
 
-input.search-field {
-    width: 400px;
-    height: 26px;
-    background-color: rgb(42, 42, 80);
-    border: none;
-    font-family: 'Times New Roman';
-    border-radius: 6px;
-}
-
-select.drop {
-    background-color: rgb(42, 42, 80);
+.drop {
+    height: 32px;
+    width: 15%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: black;
     color: rgb(167, 167, 252);
+
     border: none;
-    border-radius: 6px;
+    border: 1px solid rgb(103, 103, 237);
+    border-radius: 5px;
+    padding: 0 10px;
 }
 
-.table {
-    width: 100%;
-    padding: 20px;
-    padding-top: 10px;
+/* Table wrapper */
+
+.table-div {
     display: flex;
     justify-content: center;
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+
+
+    overflow-x: auto;
+}
+
+/* Table */
+
+.tnx-table {
+    width: 80%;
+    min-width: 500px;
+
     border-collapse: collapse;
-    margin-top: 20px;
-
+  
 }
 
-/* Ensure the table takes full width and collapses borders */
+/* Header */
 
-
-/* Style the header row */
-th {
-    text-align: center;
+.tnx-table th {
     padding: 12px;
+
     border-bottom: 2px solid rgb(103, 103, 237);
-    /* Thicker line for header */
+
     color: rgb(103, 103, 237);
+
+    text-align: center;
+
+    white-space: nowrap;
 }
 
-/* Style every data cell */
-td {
+/* Cells */
+
+.tnx-table td {
+
     padding: 12px;
+
     border-bottom: 1px solid rgb(56, 56, 84);
-    /* Light line between rows */
+
     color: rgb(138, 138, 228);
+
+    text-align: center;
 }
 
-/* Optional: Add a hover effect to rows */
-tr:hover {
+/* Hover */
+
+.tnx-table tr:hover {
     background-color: rgb(49, 49, 49);
 }
 
-h4 {
-    color: rgb(103, 103, 237);
+@media (max-width: 768px) {
+
+    .featurs-div {
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+    }
+
+
+    .drop {
+        max-width: 100%;
+    }
+
+    .search-field {
+        width: 70%;
+        max-width: 100%;
+    }
+
 
 }
 
-.hist-heading {
-    padding-right: 20px;
-    margin-bottom: 10px;
+@media (max-width: 480px) {
+
+    .drop {
+        width: 25%;
+    }
+
+    .search-field {
+        width: 70%;
+    }
+
+    .featurs-div {
+        flex-direction: column;
+        align-items: stretch;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .table-div {
+        width: 100%;
+    }
+
+
 }

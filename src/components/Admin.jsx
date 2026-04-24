@@ -2,7 +2,13 @@ import { useState, useEffect, useContext } from "react";
 import { DashboardContext, } from '../conteext/DashBoard'
 import './admin.css'
 export function Admin() {
-    const { transactions, updateTransactions, addTransaction } = useContext(DashboardContext);
+    const { transactions,
+        updateTransactions,
+        addTransaction,
+        deleteTranscation
+
+    } = useContext(DashboardContext);
+
     const [editId, setEditId] = useState(null);
     const [data, setData] = useState({
         id: null,
@@ -17,29 +23,39 @@ export function Admin() {
     const handelSave = () => {
         setEditId(null)
     }
-    console.log(transactions)
+
     const handelData = () => {
-        if (data) {
-            addTransaction(
-
-                {
-                    id: data.id,
-                    date: data.date,
-                    category: data.category,
-                    amount: data.amount,
-                    type: data.type
-                }
-
-            )
-            setData({
-                id: null,
-                date: "",
-                category: " ",
-                amount: "",
-                type: ""
-            })
+        //checking if if there is no empty input to add
+        for (let key in data) {
+            if (!data[key]) {
+                alert(`${key} is required`);
+                return;
+            }
         }
 
+        addTransaction(
+
+            {
+                id: data.id,
+                date: data.date,
+                category: data.category,
+                amount: data.amount,
+                type: data.type
+            }
+
+        )
+        setData({
+            id: null,
+            date: "",
+            category: " ",
+            amount: "",
+            type: ""
+        })
+    }
+
+    //delete function
+    const handelDelete = (id) => {
+        deleteTranscation(id);
     }
     return (
         <div className="main-admin">
@@ -91,21 +107,24 @@ export function Admin() {
 
 
             </div>
-            <div className="btn-container">
+            <div className="add-btn-container">
                 <button className="add-btn" onClick={handelData}>
                     add
                 </button>
             </div>
 
-            <div className="table">
+            <div className="admin-table">
                 <table className="admin-edit-table">
 
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Date</th>
                             <th>Amount</th>
                             <th>Category</th>
                             <th>Type</th>
+                            <th>Edit/Save</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
 
@@ -119,6 +138,22 @@ export function Admin() {
                                 <tr key={txn.id}>
 
                                     <td> {
+
+                                        editId === txn.id
+                                            ?
+                                            (
+                                                <input
+                                                    type="text"
+                                                    value={txn.id}
+                                                    onChange={(e) => updateTransactions(txn.id, { id: e.target.value })}
+                                                    className="edit-inpt"
+                                                />
+                                            )
+                                            : txn.id
+                                    }
+                                    </td>
+                                    <td> {
+
                                         editId === txn.id
                                             ?
                                             (
@@ -175,15 +210,24 @@ export function Admin() {
                                                 ? (<button
                                                     className="save-btn"
                                                     onClick={handelSave}>
-                                                    save💾
+                                                    Save💾
                                                 </button>)
 
                                                 : (<button
                                                     className="edit-btn"
                                                     onClick={() => handelEdit(txn.id)}>
-                                                    edit✏️
+                                                    Edit✏️
                                                 </button>)
                                         }
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            className="delt-btn"
+                                            onClick={(e) => handelDelete(txn.id)}>
+                                            ❌Delete
+                                        </button>
+
                                     </td>
                                 </tr>
                             )

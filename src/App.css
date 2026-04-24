@@ -1,65 +1,195 @@
+
 .main-container {
     background-color: black;
+    flex-direction: column;
     display: flex;
     gap: 20px;
-    padding: 5px;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    padding-left: 40px;
-    align-items: stretch;
-}
 
+    padding-top: 90px;
+    padding-bottom: 50px;
+
+
+    width: 100%;
+    min-height: 100vh;
+
+    flex-wrap: wrap;
+}
 
 
 .summary-container {
-    width: 25%;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 60px;
-    background-color: rgb(21, 21, 23);
-    padding-left: 15px;
-    height: max-content;
-    padding-bottom: 70px;
-    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 260px;
+
+    padding: 20px;
+    background-color: black;
+    border-radius: 20px;
+    align-items: center;
+    width: 100%;
 }
 
 .visual-container {
-    width: 65%;
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding-top: 40px;
-    padding-right: 50px;
+    width: 100%;
+    flex-direction: row;
+
+    gap: 10px;
+}
+
+.top,
+.bottom {
+    width: 100%;
+}
+
+.tans-history {
+    width: 100%;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: end;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+
+    padding: 5px 20px;
+    gap: 1px;
+    background: rgba(84, 84, 251, 0.678);
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+}
+
+.login-btn,
+.signup-btn,
+.logout-btn {
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(84, 84, 251);
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: none;
 
 }
 
+.login-signup-div {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+
+    .main-container {
+        gap: 15px;
+
+    }
+
+}
 
 @media (max-width: 768px) {
-    #main-container {
+
+    .main-container {
         flex-direction: column;
+        padding-top: 80px;
+        width: 100%;
     }
 
     .summary-container,
     .visual-container {
         width: 100%;
     }
+
+
 }
 
-.top {
-    flex: 1;
+@media (max-width: 480px) {
+
+    .main-container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .nav {
+        flex-direction: row;
+        justify-content: end;
+        gap: 1px;
+    }
+
+    .nav {
+        height: 55px;
+
+    }
+
+    .login-btn,
+    .signup-btn,
+    .logout-btn {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+
+    .guid {
+        font-size: 12px;
+    }
+
+    .login-signup-div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0px;
+        width: 50%;
+        justify-content: end;
+        align-items: center;
+
+        padding-right: 0px;
+        padding-left: 0px;
+
+    }
+
+
+
 }
 
-.bottom {
-    flex: 1;
+@media (max-width: 768px) {
+
+    .main-container {
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .summary-container {
+        width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .visual-container {
+        width: 100%;
+
+    }
+
+    .visual-container {
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
 }
 
-.tans-history {
-    padding-top: 40px;
-}
-
-.nav {
-    margin-top: 10px;
-    background-color: rgb(103, 103, 253);
-    color: aliceblue;
+* {
+    box-sizing: border-box;
 }

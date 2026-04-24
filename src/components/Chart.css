@@ -20,3 +20,59 @@ label {
     color: rgb(138, 138, 228);
     text-align: center;
 }
+
+
+.chartDiv {
+
+
+
+    width: 100%;
+    height: 300px;
+
+    padding: 15px;
+
+    background: black;
+
+    border-radius: 10px;
+
+}
+
+/* Chart title */
+
+.level {
+
+    text-align: center;
+
+    color: rgb(138, 138, 228);
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+@media (max-width: 768px) {
+
+    .chartDiv {
+
+        height: 260px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .chartDiv {
+
+        height: 220px;
+
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+}
+
+* {
+    box-sizing: border-box;
+}

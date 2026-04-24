@@ -50,8 +50,8 @@ export function TransactionsHistory() {
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </div>
-            <div className="table">
-                <table>
+            <div className="table-div">
+                <table className="tnx-table">
 
                     <thead>
                         <tr>

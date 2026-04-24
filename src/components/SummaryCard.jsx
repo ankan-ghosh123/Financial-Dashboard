@@ -4,7 +4,7 @@ import { DashboardContext } from "../conteext/DashBoard.jsx";
 import { useContext } from "react";
 import "./SummaryCard.css";
 export function SummaryCard() {
-    const { summaryExpense, summaryIncome, summaryBalance } = useContext(DashboardContext);
+    const { summaryExpense, summaryIncome, summaryBalance, transactions } = useContext(DashboardContext);
     const [total, setTotal] = useState({
         expense: 0,
         income: 0,
@@ -22,7 +22,7 @@ export function SummaryCard() {
             income: totalincome,
             balance: totalbalance
         })
-    }, [])
+    }, [transactions])
 
 
 

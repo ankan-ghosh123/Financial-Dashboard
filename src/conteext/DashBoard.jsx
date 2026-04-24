@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 export const DashboardContext = createContext();
 
 export const DashboardContextProvider = ({ children }) => {
-    const [transactions, setTranactions] = useState([
+    const data = [
         {
             id: 1,
             date: "2025-01-01",
@@ -48,7 +48,21 @@ export const DashboardContextProvider = ({ children }) => {
             type: "expense"
         }
 
-    ]);
+    ]
+    const [transactions, setTranactions] = useState(
+        () => {
+            const newData = localStorage.getItem("transactions")
+            return newData ? JSON.parse(newData)
+                : data
+        }
+    );
+
+
+    useEffect(() => {
+        localStorage.setItem(
+            "transactions", JSON.stringify(transactions))
+
+    }, [transactions])
     const updateTransactions = (id, fields) => {
         setTranactions((prev) =>
             prev.map((txn) =>
@@ -58,17 +72,31 @@ export const DashboardContextProvider = ({ children }) => {
             )
         )
     }
+
+
     const addTransaction = (data) => {
-        setTranactions((prev) => [...prev, data])
+
+        setTranactions((prev) =>
+            [...prev, data]
+
+        )
+
+    }
+    const deleteTranscation = (id) => {
+        setTranactions((prev) =>
+            prev.filter((txn) => txn.id !== id)
+        )
     }
 
 
 
-    /* SAVE */
+
 
     const summaryExpense = () => {
         const totalExpenses = transactions.reduce(
-            (sum, t) => t.type === "expense" ? sum + t.amount : sum,
+            (sum, t) =>
+                t.type === "expense" ? sum + Number(t.amount)
+                    : sum,
             0
         );
 
@@ -77,9 +105,10 @@ export const DashboardContextProvider = ({ children }) => {
 
     const summaryIncome = () => {
         const totalIncome = transactions.reduce(
-            (sum, t) => t.type === "income" ? sum + t.amount : sum, 0);
+            (sum, t) => t.type === "income" ? sum + Number(t.amount) : sum, 0);
         return totalIncome
     }
+
     const summaryBalance = (totalexpense, totalincome) => {
         return totalincome - totalexpense
     }
@@ -145,7 +174,8 @@ export const DashboardContextProvider = ({ children }) => {
         getMonthlyBalance,
         getCategoryExpenses,
         updateTransactions,
-        addTransaction
+        addTransaction,
+        deleteTranscation
     }}>{children}</DashboardContext.Provider>
 }
 

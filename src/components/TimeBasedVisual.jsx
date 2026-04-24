@@ -56,7 +56,7 @@ export function TimeBasedVisual() {
                     />
                 </LineChart>
             </ResponsiveContainer>
-            <label className="level">--Monthly Balance Trend</label>
+
         </div>
     );
 }

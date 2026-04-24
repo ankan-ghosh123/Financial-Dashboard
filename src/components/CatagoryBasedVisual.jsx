@@ -55,7 +55,7 @@ export function CatagoryBasedVisual() {
                     />
                 </BarChart>
             </ResponsiveContainer>
-            <label className="level">--Catagory VS Amount</label>
+
 
         </div>
     );
