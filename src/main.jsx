@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')).render(
     <Auth0Provider
       domain="dev-kn6rvrocj0647mbg.us.auth0.com"
       clientId="Q3bCwIdt1ftmrVP1mXFGu9QzP6AJqpdS"
-      authorizationParams={{ redirect_uri: window.location.origin }}
+      authorizationParams={{ redirect_uri: window.location.origin+"/Financial-Dashboard/" }}
     >
       <App />
 
